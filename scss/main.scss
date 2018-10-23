@@ -79,7 +79,7 @@ main {
   grid-gap: 30px;
   grid-template-areas:
     'bioimage bio bio'
-    'job1 job2 job3';
+    'icon1 icon2';
   grid-template-columns: repeat(3, 1fr);
 
   .bio-image {
@@ -94,22 +94,32 @@ main {
     font-size: 1.5rem;
   }
 
-  .job-1 {
+  .icon-1 {
     grid-area: job1;
   }
 
-  .job-2 {
+  .icon-2 {
     grid-area: job2;
   }
 
-  .job-3 {
-    grid-area: job3;
-  }
-
-  .job {
+  .icon {
     background: lighten($primary-color, 5);
-    padding: 0.5rem;
-    border-bottom: $secondary-color 5px solid;
+    ul {
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      margin: 1rem;
+      li {
+        list-style: none;
+        i {
+          font-size: 2rem;
+          &:hover {
+            color: $secondary-color;
+            @include easeOut;
+          }
+        }
+      }
+    }
   }
 }
 
