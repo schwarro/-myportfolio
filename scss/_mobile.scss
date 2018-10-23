@@ -46,15 +46,7 @@
   .portrait {
     width: 150px;
     height: 150px;
-    background: url('../img/portrait_small.jpg');
-  }
-
-  .about-info {
-    grid-template-areas:
-    'bioimage'
-    'bio';
-
-    grid-template-columns: 1fr;
+    background: url('../img/portrait.jpg');
   }
 
   .projects {
