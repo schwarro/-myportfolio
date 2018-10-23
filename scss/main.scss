@@ -7,17 +7,18 @@
 
 body {
   @include background;
-  background:$primary-color;
-  color: #fff;
+  background: $primary-color;
+  color: set-text-color($primary-color);
   height: 100%;
   margin: 0;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
 }
 
 // Headings
-
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
   font-weight: 400;
 
@@ -44,11 +45,12 @@ header {
 }
 
 .text-secondary {
-  color:$secondary-color;
+  color: $secondary-color;
 }
 
 main {
-  padding: 0 2rem;
+  padding: 4rem;
+  // height: 100%;
   min-height: calc(100vh - 60px);
 
   .icons {
@@ -74,54 +76,44 @@ main {
 
 .about-info {
   display: grid;
+  grid-gap: 30px;
   grid-template-areas:
-  'bioimage bio bio';
+    'bioimage bio bio'
+    'job1 job2 job3';
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-
 
   .bio-image {
     grid-area: bioimage;
     margin: auto;
     border-radius: 50%;
-    border: 3px solid $secondary-color;
-    grid-row-start: 1;
-    grid-row-end: 3;
+    border: $secondary-color 3px solid;
   }
 
   .bio {
     grid-area: bio;
     font-size: 1.5rem;
-    grid-row-start: 1;
-    grid-row-end: 3;
+  }
+
+  .job-1 {
+    grid-area: job1;
+  }
+
+  .job-2 {
+    grid-area: job2;
+  }
+
+  .job-3 {
+    grid-area: job3;
+  }
+
+  .job {
+    background: lighten($primary-color, 5);
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
   }
 }
 
-.lang-icons {
-  grid-column-start: 1;
-  grid-column-end: 4;
-
-  ul {
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
-
-
-    li {
-      list-style: none;
-
-      i {
-        font-size: 3rem;
-        &:hover {
-          color: $secondary-color;
-          @include easeOut();
-        }
-      }
-    }
-  }
-}
-
-//Work & Projects
+// Work/Projects
 .projects {
   display: grid;
   grid-gap: 0.7rem;
@@ -139,9 +131,8 @@ main {
   }
 }
 
-//Contact Page
-
-.box {
+// Contact Page
+.boxes {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -150,22 +141,23 @@ main {
 
   div {
     font-size: 2rem;
-    border: 3px white solid;
+    border: 3px #fff solid;
     padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
     @include easeOut;
 
     &:hover {
+      padding: 0.5rem 1.5rem;
       background: $secondary-color;
       color: set-text-color($secondary-color);
       span {
-        color: #000;
+        color: set-text-color($secondary-color);
       }
     }
   }
 }
 
-//Button Styles
+// Button Styles
 .btn {
   display: block;
   padding: 0.5rem 1rem;
@@ -187,14 +179,13 @@ main {
   @extend .btn;
   background: lighten($primary-color, 50);
   color: #333;
-
 }
 
 #main-footer {
   text-align: center;
   padding: 1rem;
   background: darken($primary-color, 10);
-  color: #fff;
+  color: set-text-color($primary-color);
   height: 60px;
 }
 
