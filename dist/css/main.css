@@ -202,23 +202,18 @@ main {
       transition: all 0.5s ease-out; }
 
 .boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
   align-items: center;
-  margin-top: 1rem; }
-  .boxes div {
-    font-size: 2rem;
-    border: 3px #fff solid;
-    padding: 1.5rem 2.5rem;
-    margin-bottom: 3rem;
-    transition: all 0.5s ease-out; }
-    .boxes div:hover {
-      padding: 0.5rem 1.5rem;
-      background: #d41e1e;
+  margin: 1rem auto;
+  font-size: 1rem;
+  border: 3px #fff solid;
+  padding: 1.5rem 2.5rem;
+  transition: all 0.5s ease-out; }
+  .boxes:hover {
+    padding: 0.5rem 1.5rem;
+    background: #d41e1e;
+    color: #000; }
+    .boxes:hover span {
       color: #000; }
-      .boxes div:hover span {
-        color: #000; }
 
 .btn, .btn-dark, .btn-light {
   display: block;
@@ -285,20 +280,34 @@ main {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
+  #about {
+    margin: 0 auto; }
   main {
-    padding: 2rem; }
+    padding: 0; }
     main #home h1 {
       margin-top: 10vh; }
     main .lg-heading {
       margin-top: 1rem;
       font-size: 5rem; }
+    main .sm-heading {
+      padding: 0;
+      font-size: 2rem;
+      margin: 0 auto; }
     main .about-info {
-      grid-template-areas: 'bioimage' 'bio' 'icon'; }
+      grid-template-areas: 'bioimage' 'bio' 'icon1' 'icon2'; }
       main .about-info .bio-image {
         grid-area: bioimage; }
       main .about-info .bio {
-        grid-area: bio; }
-      main .about-info .icon {
-        grid-area: icon; }
+        grid-area: bio;
+        margin: 0; }
+        main .about-info .bio p {
+          font-size: 1rem; }
+      main .about-info .icon1 {
+        grid-area: icon1; }
+        main .about-info .icon1 li img {
+          height: 65px;
+          width: 65px; }
+      main .about-info .icon2 {
+        grid-area: icon2; }
   .projects {
     grid-template-columns: 1fr; } }

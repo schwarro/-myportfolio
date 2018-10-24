@@ -68,8 +68,12 @@
 
 // Smartphones
 @include mediaSm {
+
+  #about {
+    margin: 0 auto;
+  }
   main {
-    padding: 2rem;
+    padding: 0;
     #home h1 {
       margin-top: 10vh;
     }
@@ -79,19 +83,39 @@
       font-size: 5rem;
     }
 
+    .sm-heading {
+      padding: 0;
+      font-size: 2rem;
+      margin: 0 auto;
+    }
+
     .about-info {
       grid-template-areas:
         'bioimage'
         'bio'
-        'icon';
+        'icon1'
+        'icon2';
       .bio-image {
         grid-area: bioimage;
       }
       .bio {
         grid-area: bio;
+        margin: 0;
+        p {
+          font-size: 1rem;
+        }
       }
-      .icon {
-        grid-area: icon;
+      .icon1 {
+        grid-area: icon1;
+        li {
+          img {
+            height: 65px;
+            width: 65px;
+          }
+        }
+      }
+      .icon2 {
+        grid-area: icon2;
       }
     }
   }
