@@ -176,14 +176,17 @@ main {
     .about-info .icon ul {
       padding: 0;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       margin: 1rem; }
       .about-info .icon ul li {
         list-style: none; }
-        .about-info .icon ul li i {
-          font-size: 2rem; }
-          .about-info .icon ul li i:hover {
-            color: #d41e1e;
+        .about-info .icon ul li img {
+          height: 100px;
+          width: 100px;
+          border: 3px transparent solid;
+          border-radius: 25%; }
+          .about-info .icon ul li img:hover {
+            border-color: #d41e1e;
             transition: all 0.5s ease-out; }
 
 .projects {

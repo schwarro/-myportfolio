@@ -100,16 +100,20 @@ main {
     ul {
       padding: 0;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       margin: 1rem;
       li {
         list-style: none;
-        i {
-          font-size: 2rem;
+        img {
+          height: 100px;
+          width: 100px;
+          border: 3px transparent solid;
+          border-radius: 25%;
           &:hover {
-            color: $secondary-color;
+            border-color: $secondary-color;
             @include easeOut;
           }
+
         }
       }
     }
